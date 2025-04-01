@@ -2,6 +2,7 @@
 
 use App\Livewire\Admin\Create as AdminCreate;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Auth\Login;
 use App\Livewire\Cliente\Create;
 use App\Livewire\Funcionario\Create as FuncionarioCreate;
 use App\Livewire\Funcionario\Dashboard as FuncionarioDashboard;
@@ -21,3 +22,5 @@ Route::get('cadastro/funcionario', FuncionarioCreate::class)->middleware(['auth'
 Route::get('cadastro/admin', AdminCreate::class)->middleware(['auth', 'role:admin']);
 
 Route::get('admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin']);
+
+Route::get('/login', Login::class);
