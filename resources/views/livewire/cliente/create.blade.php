@@ -44,9 +44,9 @@
                     <label for="inputState" class="form-label">CPF</label>
                     <input type="text" class="form-control" id="inputCity" wire:model.defer="cpf">
                 </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                 </div>
             </form>
         </div>
     </div>
