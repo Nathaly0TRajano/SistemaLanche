@@ -21,6 +21,6 @@ Route::get('cadastro/funcionario', FuncionarioCreate::class)->middleware(['auth'
 
 Route::get('cadastro/admin', AdminCreate::class)->middleware(['auth', 'role:admin']);
 
-Route::get('admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin']);
+Route::get('admin/dashboard', AdminDashboard::class)->middleware(['auth', 'role:admin'])->name('admin.dashboard');
 
-Route::get('/login', Login::class);
+Route::get('/', Login::class)->name('login');
