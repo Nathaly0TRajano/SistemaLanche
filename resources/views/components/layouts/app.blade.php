@@ -12,32 +12,81 @@
     @livewireStyles
 </head>
 <body>
-    
+  
+    @if(auth()->check() && auth()->user()->role === 'admin')
     <nav class="navbar navbar-expand-lg bg-body-secondary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Funcionários</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Perfil</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-      
+      </div>
+    </nav>
+    @endif
+
+    @if(auth()->check() && auth()->user()->role === 'funcionario')
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ route('funcionario.dashboard') }}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Produtos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Clientes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    @endif
+
+    @if(auth()->check() && auth()->user()->role === 'cliente')
+    <nav class="navbar navbar-expand-lg bg-body-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{ route('funcionario.dashboard') }}">Home</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    @endif
 
     <div class="container ">
 
